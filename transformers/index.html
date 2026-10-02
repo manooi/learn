@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  Interactive learning site generated from the interactive-learning-site skill. No build step.
+  Open this file directly in a browser. If previews don't load under file://,
+  serve the folder instead:  python3 -m http.server 8000  → http://localhost:8000
+  React mode needs internet (Babel from unpkg, React from esm.sh).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn Transformers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('lr-theme') || 'dark';
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <button id="menu-btn" class="icon-btn" aria-label="Toggle menu">☰</button>
+    <a href="#/" class="brand"></a>
+    <div class="progress-wrap" title="Lessons completed">
+      <div class="progress"><div id="progress-bar"></div></div>
+      <span id="progress-text">0 / 0</span>
+    </div>
+    <button id="theme-btn" class="icon-btn" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <div class="layout">
+    <nav id="sidebar">
+      <input id="search" type="search" placeholder="Search lessons…" autocomplete="off" />
+      <div id="nav"></div>
+    </nav>
+    <main id="content"></main>
+  </div>
+
+  <script src="site.js"></script>
+  <script>window.LESSONS = [];</script>
+  <!-- One script per lesson file, in curriculum order. -->
+  <script src="lessons/01-ml-basics.js"></script>
+  <script src="lessons/02-neural-nets.js"></script>
+  <script src="lessons/03-language-data.js"></script>
+  <script src="lessons/04-attention.js"></script>
+  <script src="lessons/05-transformer-block.js"></script>
+  <script src="lessons/06-llms.js"></script>
+  <script>window.Prism = { manual: true };</script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-clike.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="runner.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
