@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn — Interactive Lessons</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('lr-theme') || 'dark';
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">📚</span> Learn</div>
+    <button id="theme-btn" class="icon-btn" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main class="landing">
+    <h1>Welcome</h1>
+    <p>Select a topic to start learning:</p>
+
+    <div class="cards">
+      <a href="react/" class="card">
+        <span class="card-icon">⚛</span>
+        <h2>React</h2>
+        <p>Interactive lessons on React fundamentals, hooks, and advanced patterns.</p>
+      </a>
+
+      <a href="docker-kubernetes/" class="card">
+        <span class="card-icon">🐳</span>
+        <h2>Docker & Kubernetes</h2>
+        <p>Containerization and orchestration essentials.</p>
+      </a>
+
+      <a href="architecture-patterns/" class="card">
+        <span class="card-icon">🏗</span>
+        <h2>Architecture Patterns</h2>
+        <p>Design patterns and architectural best practices.</p>
+      </a>
+
+      <a href="zustand/" class="card">
+        <span class="card-icon">🔄</span>
+        <h2>Zustand</h2>
+        <p>State management with Zustand.</p>
+      </a>
+
+      <a href="pi-coding-agent/" class="card">
+        <span class="card-icon">🤖</span>
+        <h2>PI Coding Agent</h2>
+        <p>Learn about the PI coding agent.</p>
+      </a>
+
+      <a href="transformers/" class="card">
+        <span class="card-icon">🧠</span>
+        <h2>Transformers</h2>
+        <p>Transformer models and NLP fundamentals.</p>
+      </a>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
