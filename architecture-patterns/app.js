@@ -227,7 +227,11 @@
   }
 
   $('#search').addEventListener('input', (e) => renderNav(e.target.value));
-  $('#menu-btn').onclick = () => document.body.classList.toggle('nav-open');
+  $('#menu-btn').onclick = () => {
+    if (window.matchMedia('(max-width: 800px)').matches) document.body.classList.toggle('nav-open');
+    else localStorage.setItem('lr-nav-collapsed', document.body.classList.toggle('nav-collapsed') ? '1' : '');
+  };
+  if (localStorage.getItem('lr-nav-collapsed')) document.body.classList.add('nav-collapsed');
   $('#theme-btn').onclick = () => {
     const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = t;
